@@ -5,6 +5,7 @@ import 'dotenv/config';
 async function generateVectorEmbeddingsForFile(filepath) {
     const loader = new PDFLoader(filepath)
     const document = await loader.load() // 1.Already chunks data page by page
+    console.log(document[0].metadata)
 
     //2. Initialize the embedding model
     const embeddings = new OpenAIEmbeddings({
@@ -21,7 +22,7 @@ async function generateVectorEmbeddingsForFile(filepath) {
         }
     )
     await vectorStore.addDocuments(document);
-    console.log("All the documents are indexed.")
+    console.log("All the documents are indexed...")
 };
 
 generateVectorEmbeddingsForFile('./typescripts-docs.pdf');
