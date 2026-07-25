@@ -25,6 +25,6 @@ async function generateVectorEmbeddingsForFile(filepath) {
     console.log("All the documents are indexed...")
 };
 
-generateVectorEmbeddingsForFile('./typescripts-docs.pdf');
+generateVectorEmbeddingsForFile('./Pro_TypeScript_2nd.www.EBooksWorld.ir.pdf');
 
 
